@@ -2,7 +2,7 @@
 
 # 定义一些变量
 IMAGE_NAME="liaoshiquan/midjourney-proxy"
-CONTAINER_NAME="mjopen"
+CONTAINER_NAME="stone-mjopen"
 
 # 打印信息
 echo "开始更新 ${CONTAINER_NAME} 容器..."
