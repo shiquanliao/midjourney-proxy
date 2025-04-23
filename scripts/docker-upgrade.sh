@@ -45,7 +45,7 @@ fi
 # 运行新的容器
 echo "启动新的容器 ${CONTAINER_NAME}..."
 docker run --name ${CONTAINER_NAME} -d --restart=always \
- -p 8086:8080 --user root \
+ -p 8036:8080 --user root \
  -v /root/mjopen/logs:/app/logs:rw \
  -v /root/mjopen/data:/app/data:rw \
  -v /root/mjopen/attachments:/app/wwwroot/attachments:rw \
