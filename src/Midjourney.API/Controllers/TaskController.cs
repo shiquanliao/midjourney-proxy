@@ -119,29 +119,29 @@ namespace Midjourney.API.Controllers
         [HttpGet("{id}/image-seed")]
         public async Task<ActionResult<SubmitResultVO>> ImageSeed(string id)
         {
-            var targetTask = _taskStoreService.Get(id);
-            if (targetTask != null)
-            {
-                if (!string.IsNullOrWhiteSpace(targetTask.Seed))
-                {
-                    return Ok(SubmitResultVO.Of(ReturnCode.SUCCESS, "成功", targetTask.Seed));
-                }
-                else
-                {
-                    var hash = targetTask.GetProperty<string>(Constants.TASK_PROPERTY_MESSAGE_HASH, default);
-                    if (string.IsNullOrWhiteSpace(hash))
-                    {
-                        return BadRequest(SubmitResultVO.Fail(ReturnCode.VALIDATION_ERROR, "关联任务状态错误"));
-                    }
-                    else
-                    {
-                        // 有 hash 但没有 seed，说明任务已经完成，但是没有 seed
-                        // 重新获取 seed
-                        var data = await _taskService.SubmitSeed(targetTask);
-                        return Ok(data);
-                    }
-                }
-            }
+            // var targetTask = _taskStoreService.Get(id);
+            // if (targetTask != null)
+            // {
+            //     if (!string.IsNullOrWhiteSpace(targetTask.Seed))
+            //     {
+            //         return Ok(SubmitResultVO.Of(ReturnCode.SUCCESS, "成功", targetTask.Seed));
+            //     }
+            //     else
+            //     {
+            //         var hash = targetTask.GetProperty<string>(Constants.TASK_PROPERTY_MESSAGE_HASH, default);
+            //         if (string.IsNullOrWhiteSpace(hash))
+            //         {
+            //             return BadRequest(SubmitResultVO.Fail(ReturnCode.VALIDATION_ERROR, "关联任务状态错误"));
+            //         }
+            //         else
+            //         {
+            //             // 有 hash 但没有 seed，说明任务已经完成，但是没有 seed
+            //             // 重新获取 seed
+            //             var data = await _taskService.SubmitSeed(targetTask);
+            //             return Ok(data);
+            //         }
+            //     }
+            // }
 
             return NotFound(SubmitResultVO.Fail(ReturnCode.NOT_FOUND, "关联任务不存在或已失效"));
         }
