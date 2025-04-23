@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # 定义一些变量
+# 镜像名称已更新为支持 linux/amd64 和 linux/arm64 平台的个人 Docker Hub 仓库
 IMAGE_NAME="liaoshiquan/midjourney-proxy"
 CONTAINER_NAME="stone-mjopen"
 
