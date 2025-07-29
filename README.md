@@ -177,7 +177,7 @@ The most powerful, complete, full-featured, completely free and open source Midj
 # 自动安装并启动
 # 推荐使用一键升级脚本
 # 1.首次下载（下载后可以编辑此脚本，进行自定义配置，例如：路径、端口、内存等配置，默认8086端口）
-wget -O docker-upgrade.sh https://raw.githubusercontent.com/trueai-org/midjourney-proxy/main/scripts/docker-upgrade.sh && bash docker-upgrade.sh
+wget -O docker-upgrade.sh https://raw.githubusercontent.com/shiquanliao/midjourney-proxy/main/scripts/docker-upgrade.sh && bash docker-upgrade.sh
 
 # 2.更新升级（以后升级只需要执行此脚本即可）
 sh docker-upgrade.sh
@@ -228,7 +228,7 @@ docker run --name mjopen -d --restart=always \
  ghcr.io/trueai-org/midjourney-proxy
 
 # DockerHub 镜像
-docker pull trueaiorg/midjourney-proxy
+docker pull liaoshiquan/midjourney-proxy:latest
 docker run --name mjopen -d --restart=always \
  -p 8086:8080 --user root \
  -v /root/mjopen/logs:/app/logs:rw \
@@ -238,13 +238,13 @@ docker run --name mjopen -d --restart=always \
  -e TZ=Asia/Shanghai \
  -v /etc/localtime:/etc/localtime:ro \
  -v /etc/timezone:/etc/timezone:ro \
- trueaiorg/midjourney-proxy
+ liaoshiquan/midjourney-proxy:latest
 ```
 
 > Windows 版本
 
 ```bash
-a. 通过 https://github.com/trueai-org/midjourney-proxy/releases 下载 windows 最新免安装版，例如：midjourney-proxy-win-x64.zip
+a. 通过 https://github.com/shiquanliao/midjourney-proxy/releases 下载 windows 最新免安装版，例如：midjourney-proxy-win-x64.zip
 b. 解压并执行 Midjourney.API.exe
 c. 打开网站 http://localhost:8080
 d. 部署到 IIS（可选），在 IIS 添加网站，将文件夹部署到 IIS，配置应用程序池为`无托管代码`，启动网站。
@@ -254,7 +254,7 @@ e. 使用系统自带的 `任务计划程序`（可选），创建基本任务�
 > Linux 版本
 
 ```bash
-a. 通过 https://github.com/trueai-org/midjourney-proxy/releases 下载 linux 最新免安装版，例如：midjourney-proxy-linux-x64.zip
+a. 通过 https://github.com/shiquanliao/midjourney-proxy/releases 下载 linux 最新免安装版，例如：midjourney-proxy-linux-x64.zip
 b. 解压到当前目录: tar -xzf midjourney-proxy-linux-x64-<VERSION>.tar.gz
 c. 执行: run_app.sh
 c. 启动方式1: sh run_app.sh
@@ -264,7 +264,7 @@ d. 启动方式2: chmod +x run_app.sh && ./run_app.sh
 > macOS 版本
 
 ```bash
-a. 通过 https://github.com/trueai-org/midjourney-proxy/releases 下载 macOS 最新免安装版，例如：midjourney-proxy-osx-x64.zip
+a. 通过 https://github.com/shiquanliao/midjourney-proxy/releases 下载 macOS 最新免安装版，例如：midjourney-proxy-osx-x64.zip
 b. 解压到当前目录: tar -xzf midjourney-proxy-osx-x64-<VERSION>.tar.gz
 c. 执行: run_app_osx.sh
 c. 启动方式1: sh run_app_osx.sh
@@ -275,10 +275,10 @@ d. 启动方式2: chmod +x run_app_osx.sh && ./run_app_osx.sh
 
 ```bash
 # 方式1
-wget -N --no-check-certificate https://raw.githubusercontent.com/trueai-org/midjourney-proxy/main/scripts/linux_install.sh && chmod +x linux_install.sh && bash linux_install.sh
+wget -N --no-check-certificate https://raw.githubusercontent.com/shiquanliao/midjourney-proxy/main/scripts/linux_install.sh && chmod +x linux_install.sh && bash linux_install.sh
 
 # 方式2
-curl -o linux_install.sh https://raw.githubusercontent.com/trueai-org/midjourney-proxy/main/scripts/linux_install.sh && chmod +x linux_install.sh && bash linux_install.sh
+curl -o linux_install.sh https://raw.githubusercontent.com/shiquanliao/midjourney-proxy/main/scripts/linux_install.sh && chmod +x linux_install.sh && bash linux_install.sh
 ```
 
 ## 参数配置

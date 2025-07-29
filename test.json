@@ -1,0 +1,16 @@
+{
+    "enableDiscoverFeed": {
+        "switch": "off",
+        "abtesting": "GBU-Plato-3241-A"
+    },
+    "_msgdc_id_": "0c97b32e1801413a99c47753"
+}
+
+
+{
+    "enableDiscoverFeed": {
+        "switch": "on",
+        "abtesting": "GBU-Plato-3241-B"
+    },
+    "_msgdc_id_": "0c97b32e1801413a99c47753"
+}
